@@ -1,40 +1,40 @@
-import calculadora
+import calculator
 
-from conversoes import converter_para_inteiro, converter_para_float
-from ferramentas.textos import transformar_em_maiusculo as maiusculo
-from ferramentas.textos import transformar_em_minusculo
+from conversions import convert_to_integer, convert_to_float
+from tools.texts import to_uppercase as uppercase
+from tools.texts import to_lowercase
 
 
 def main():
-    print("===== CALCULADORA =====")
+    print("===== CALCULATOR =====")
 
-    print("Soma:", calculadora.somar(10, 5))
-    print("Subtração:", calculadora.subtrair(10, 5))
-    print("Multiplicação:", calculadora.multiplicar(10, 5))
+    print("Addition:", calculator.add(10, 5))
+    print("Subtraction:", calculator.subtract(10, 5))
+    print("Multiplication:", calculator.multiply(10, 5))
 
-    resultado_divisao = calculadora.dividir(10, 2)
+    division_result = calculator.divide(10, 2)
 
-    if resultado_divisao is not None:
-        print("Divisão:", resultado_divisao)
-
-
-    print("\n===== CONVERSÕES =====")
-
-    numero_inteiro = converter_para_inteiro("25")
-    numero_float = converter_para_float("10.5")
-    valor_invalido = converter_para_inteiro("Python")
-
-    print("Inteiro:", numero_inteiro)
-    print("Float:", numero_float)
-    print("Conversão inválida:", valor_invalido)
+    if division_result is not None:
+        print("Division:", division_result)
 
 
-    print("\n===== TEXTOS =====")
+    print("\n===== CONVERSIONS =====")
 
-    texto = "Machine Learning"
+    integer_number = convert_to_integer("25")
+    float_number = convert_to_float("10.5")
+    invalid_value = convert_to_integer("Python")
 
-    print(maiusculo(texto))
-    print(transformar_em_minusculo(texto))
+    print("Integer:", integer_number)
+    print("Float:", float_number)
+    print("Invalid conversion:", invalid_value)
+
+
+    print("\n===== TEXTS =====")
+
+    text = "Machine Learning"
+
+    print(uppercase(text))
+    print(to_lowercase(text))
 
 
 if __name__ == "__main__":

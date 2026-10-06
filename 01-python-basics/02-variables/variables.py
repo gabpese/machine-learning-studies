@@ -1,3 +1,3 @@
-salario = 2500
-despesas = 500
-saldo = salario - despesas
+salary = 2500
+expenses = 500
+balance = salary - expenses

@@ -1,38 +1,38 @@
-# Erros estudados:
+# Errors studied:
 #
-# TypeError         -> operação incompatível com o tipo do dado
-# NameError         -> nome/variável inexistente
-# IndexError        -> índice inexistente em uma sequência
-# KeyError          -> chave inexistente em um dicionário
-# ValueError        -> valor inválido para determinada operação
-# ZeroDivisionError -> tentativa de divisão por zero
+# TypeError         -> operation incompatible with the data type
+# NameError         -> name/variable does not exist
+# IndexError        -> index does not exist in a sequence
+# KeyError          -> key does not exist in a dictionary
+# ValueError        -> invalid value for a given operation
+# ZeroDivisionError -> attempt to divide by zero
 #
-# Estrutura:
+# Structure:
 #
 # try:
-#     código que pode gerar erro
-# except TipoDoErro:
-#     tratamento do erro
+#     code that may raise an error
+# except ErrorType:
+#     error handling
 # else:
-#     executa se nenhum erro ocorrer
+#     runs if no error occurs
 # finally:
-#     executa sempre
+#     always runs
 
 
 # ============================================================
-# VALUEERROR E TYPEERROR
+# VALUEERROR AND TYPEERROR
 # ============================================================
 
-def converter_para_inteiro(valor):
+def convert_to_integer(value):
     try:
-        return int(valor)
+        return int(value)
 
-    except ValueError as erro:
-        print("Valor inválido:", erro)
+    except ValueError as error:
+        print("Invalid value:", error)
         return None
 
-    except TypeError as erro:
-        print("Tipo inválido:", erro)
+    except TypeError as error:
+        print("Invalid type:", error)
         return None
 
 
@@ -40,12 +40,12 @@ def converter_para_inteiro(valor):
 # INDEXERROR
 # ============================================================
 
-def buscar_item(lista, indice):
+def find_item(items, index):
     try:
-        return lista[indice]
+        return items[index]
 
-    except IndexError as erro:
-        print("Posição inexistente:", erro)
+    except IndexError as error:
+        print("Position does not exist:", error)
         return None
 
 
@@ -53,29 +53,29 @@ def buscar_item(lista, indice):
 # KEYERROR
 # ============================================================
 
-def buscar_valor(dicionario, chave):
+def find_value(dictionary, key):
     try:
-        return dicionario[chave]
+        return dictionary[key]
 
-    except KeyError as erro:
-        print("Chave inexistente:", erro)
+    except KeyError as error:
+        print("Key does not exist:", error)
         return None
 
 
 # ============================================================
-# ZERODIVISIONERROR E TYPEERROR
+# ZERODIVISIONERROR AND TYPEERROR
 # ============================================================
 
-def dividir(a, b):
+def divide(a, b):
     try:
         return a / b
 
-    except ZeroDivisionError as erro:
-        print("Não é possível dividir por zero:", erro)
+    except ZeroDivisionError as error:
+        print("Cannot divide by zero:", error)
         return None
 
-    except TypeError as erro:
-        print("Tipo inválido para divisão:", erro)
+    except TypeError as error:
+        print("Invalid type for division:", error)
         return None
 
 
@@ -83,103 +83,102 @@ def dividir(a, b):
 # TRY / EXCEPT / ELSE / FINALLY
 # ============================================================
 
-def validar_numero(valor):
+def validate_number(value):
     try:
-        numero = int(valor)
+        number = int(value)
 
-    except ValueError as erro:
-        print("Valor inválido:", erro)
+    except ValueError as error:
+        print("Invalid value:", error)
 
-    except TypeError as erro:
-        print("Tipo inválido:", erro)
+    except TypeError as error:
+        print("Invalid type:", error)
 
     else:
-        print("Conversão realizada com sucesso.")
-        print("Número:", numero)
+        print("Conversion succeeded.")
+        print("Number:", number)
 
     finally:
-        print("Validação concluída.")
+        print("Validation completed.")
 
 
 # ============================================================
-# TESTES
+# TESTS
 # ============================================================
 
-print("----- CONVERSÃO -----")
+print("----- CONVERSION -----")
 
-resultado = converter_para_inteiro("42")
+result = convert_to_integer("42")
 
-if resultado is not None:
-    print("Resultado:", resultado)
-
-
-print("\n----- CONVERSÃO INVÁLIDA -----")
-
-resultado = converter_para_inteiro("Python")
-
-if resultado is not None:
-    print("Resultado:", resultado)
+if result is not None:
+    print("Result:", result)
 
 
-print("\n----- LISTA -----")
+print("\n----- INVALID CONVERSION -----")
 
-nomes = ["Ana", "Carlos"]
+result = convert_to_integer("Python")
 
-resultado = buscar_item(nomes, 1)
-
-if resultado is not None:
-    print("Item encontrado:", resultado)
+if result is not None:
+    print("Result:", result)
 
 
-print("\n----- ÍNDICE INVÁLIDO -----")
+print("\n----- LIST -----")
 
-resultado = buscar_item(nomes, 10)
+names = ["Ana", "Carlos"]
 
-if resultado is not None:
-    print("Item encontrado:", resultado)
+result = find_item(names, 1)
+
+if result is not None:
+    print("Item found:", result)
 
 
-print("\n----- DICIONÁRIO -----")
+print("\n----- INVALID INDEX -----")
 
-usuario = {
-    "nome": "Gabriel",
-    "idade": 30
+result = find_item(names, 10)
+
+if result is not None:
+    print("Item found:", result)
+
+
+print("\n----- DICTIONARY -----")
+
+user = {
+    "name": "Gabriel",
+    "age": 30
 }
 
-resultado = buscar_valor(usuario, "idade")
+result = find_value(user, "age")
 
-if resultado is not None:
-    print("Valor encontrado:", resultado)
-
-
-print("\n----- CHAVE INVÁLIDA -----")
-
-resultado = buscar_valor(usuario, "cidade")
-
-if resultado is not None:
-    print("Valor encontrado:", resultado)
+if result is not None:
+    print("Value found:", result)
 
 
-print("\n----- DIVISÃO -----")
+print("\n----- INVALID KEY -----")
 
-resultado = dividir(100, 2)
+result = find_value(user, "city")
 
-if resultado is not None:
-    print("Resultado:", resultado)
-
-
-print("\n----- DIVISÃO POR ZERO -----")
-
-resultado = dividir(100, 0)
-
-if resultado is not None:
-    print("Resultado:", resultado)
+if result is not None:
+    print("Value found:", result)
 
 
-print("\n----- ELSE E FINALLY -----")
+print("\n----- DIVISION -----")
 
-validar_numero("50")
+result = divide(100, 2)
+
+if result is not None:
+    print("Result:", result)
 
 
-print("\n----- FIM DO PROGRAMA -----")
+print("\n----- DIVISION BY ZERO -----")
 
+result = divide(100, 0)
+
+if result is not None:
+    print("Result:", result)
+
+
+print("\n----- ELSE AND FINALLY -----")
+
+validate_number("50")
+
+
+print("\n----- END OF PROGRAM -----")

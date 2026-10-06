@@ -1,18 +1,18 @@
-notas = [8, 5, 9, 7, 4, 10]
+grades = [8, 5, 9, 7, 4, 10]
 
 
-def analisar_notas(notas, nota_minima=7):
-    aprovados = 0
+def analyze_grades(grades, minimum_grade=7):
+    approved = 0
 
-    for nota in notas:
-        if nota >= nota_minima:
-            aprovados += 1
+    for grade in grades:
+        if grade >= minimum_grade:
+            approved += 1
 
-    return aprovados
+    return approved
 
 
-resultado_1 = analisar_notas(notas)
-print("Quantidade de aprovados:", resultado_1)
+result_1 = analyze_grades(grades)
+print("Approved count:", result_1)
 
-resultado_2 = analisar_notas(notas, nota_minima=9)
-print("Quantidade de aprovados (com nota mínima 9):", resultado_2)
+result_2 = analyze_grades(grades, minimum_grade=9)
+print("Approved count (minimum grade 9):", result_2)

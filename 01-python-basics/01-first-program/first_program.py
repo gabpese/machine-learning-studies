@@ -1,19 +1,19 @@
-# Entre aspas eh string
-# True e False eh boleano
-# Numeros inteiros são int (intergers)
-# Número não inteiros são floats
+# Text between quotes is a string
+# True and False are booleans
+# Whole numbers are int (integers)
+# Numbers with decimals are floats
+# type(variable) tells the type of a variable
 
+name = "Gabriel"
+age = 25
+language = "Python"
+text = "10"
 
-nome = "Gabriel"
-idade = 25
-linguagem = "Python"
-texto = "10"
+print(age + int(text))
 
-print(idade + int(texto))
-
-print(nome)
-print(type(nome))
-print(idade)
-print(type(idade))
-print(linguagem)
-print(type(linguagem))
+print(name)
+print(type(name))
+print(age)
+print(type(age))
+print(language)
+print(type(language))

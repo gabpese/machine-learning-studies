@@ -1,67 +1,66 @@
-#   NameError  → nome/variável inexistente
-#   IndexError → índice inexistente em lista
-#   KeyError   → chave inexistente em dicionário
+#   NameError  → name/variable does not exist
+#   IndexError → index does not exist in a list
+#   KeyError   → key does not exist in a dictionary
 
-curso ={
-    "nome": "Machine Learning com Python",
-    "duracao_meses": 12,
-    "ativo": True
+course = {
+    "name": "Machine Learning with Python",
+    "duration_months": 12,
+    "active": True
 }
 
-pessoa = {
-    "nome": "Ana",
-    "idade": 29
+person = {
+    "name": "Ana",
+    "age": 29
 }
 
-usuario = {
-    "nome": "Gabriel",
-    "idade": 30,
-    "ativo": True
+user = {
+    "name": "Gabriel",
+    "age": 30,
+    "active": True
 }
 
-produto_1 = {
-    "nome": "Teclado",
-    "preco": 150,
-    "estoque": 8
+product_1 = {
+    "name": "Keyboard",
+    "price": 150,
+    "stock": 8
 }
 
-produto_2 = {
-    "nome": "Mouse",
-    "preco": 80,
-    "estoque": 0
+product_2 = {
+    "name": "Mouse",
+    "price": 80,
+    "stock": 0
 }
 
-def mostrar_items_dicionario(dicionario):
-    for chave, valor in dicionario.items():
-        print(chave, valor)
+def show_dictionary_items(dictionary):
+    for key, value in dictionary.items():
+        print(key, value)
 
-def mostrar_chaves_dicionario(dicionario):
-    for chave in dicionario.keys():
-        print(chave)
+def show_dictionary_keys(dictionary):
+    for key in dictionary.keys():
+        print(key)
 
-def mostrar_valores_dicionario(dicionario):
-    for valor in dicionario.values():
-        print(valor)
+def show_dictionary_values(dictionary):
+    for value in dictionary.values():
+        print(value)
 
-def verificar_produto(produto):
-    if produto.get("estoque", 0) > 0:
-        print(produto["nome"], "Disponível")
+def check_product(product):
+    if product.get("stock", 0) > 0:
+        print(product["name"], "Available")
     else:
-        print(produto["nome"], "Sem estoque")
+        print(product["name"], "Out of stock")
 
-dicionarios = [curso, pessoa, usuario, produto_1, produto_2]
+dictionaries = [course, person, user, product_1, product_2]
 
-for dicionario in dicionarios:
-    print("Items do dicionário:")
-    mostrar_items_dicionario(dicionario)
+for dictionary in dictionaries:
+    print("Dictionary items:")
+    show_dictionary_items(dictionary)
     print("-----")
-    print("Chaves do dicionário:")
-    mostrar_chaves_dicionario(dicionario)
+    print("Dictionary keys:")
+    show_dictionary_keys(dictionary)
     print("-----")
-    print("Valores do dicionário:")
-    mostrar_valores_dicionario(dicionario)
+    print("Dictionary values:")
+    show_dictionary_values(dictionary)
     print("=====================================")
 
-verificar_produto(produto_1)
-verificar_produto(produto_2)
-
+check_product(product_1)
+check_product(product_2)

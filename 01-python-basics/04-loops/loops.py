@@ -1,19 +1,19 @@
-#   append()    adiciona no final
-#   insert()    adiciona em uma posição específica
-#   remove()    remove pelo valor
-#   pop()       remove pelo índice
-#   len()       quantidade de elementos
+#   append()    adds at the end
+#   insert()    adds at a specific position
+#   remove()    removes by value
+#   pop()       removes by index
+#   len()       number of elements
 
-notas = [8, 5, 9, 4, 7, 10]
+grades = [8, 5, 9, 4, 7, 10]
 
-quantidade_aprovados = 0
+approved_count = 0
 
-for nota in notas:
-    if nota >= 7:
-        quantidade_aprovados += 1
-        print(nota, "Aprovado")
+for grade in grades:
+    if grade >= 7:
+        approved_count += 1
+        print(grade, "Approved")
     else:
-        print(nota, "Reprovado")
+        print(grade, "Failed")
 
 
-print("Quantidade de aprovados:", quantidade_aprovados)
+print("Approved count:", approved_count)
